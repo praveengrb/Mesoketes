@@ -7,7 +7,7 @@
 
 package praveen.mesoketes.model;
 
-import praveen.mesoketes.base.model.abstraction.BasicWallProperties;
+import praveen.mesoketes.base.model.abstraction.BasicSide;
 
 /**
  * @author Praveen,Sankarasubramanian
@@ -16,7 +16,7 @@ import praveen.mesoketes.base.model.abstraction.BasicWallProperties;
  * @version 1.0
  * Jun 21, 2017
  */
-public class WallProperties extends BasicWallProperties{
+public class Side extends BasicSide{
 	private int height;
 
 	/**

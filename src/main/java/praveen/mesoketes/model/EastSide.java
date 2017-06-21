@@ -5,7 +5,7 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base.model;
+package praveen.mesoketes.model;
 
 /**
  * @author Praveen,Sankarasubramanian
@@ -14,16 +14,6 @@ package praveen.mesoketes.base.model;
  * @version 1.0
  * Jun 21, 2017
  */
-public interface IWallProperties extends IBase {
-
-	/**
-	 * @return
-	 */
-	int getHeight();
-
-	/**
-	 * @param height
-	 */
-	void setHeight(int height);
+public class EastSide extends Side {
 
 }

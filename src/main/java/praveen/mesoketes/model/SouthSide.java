@@ -14,6 +14,6 @@ package praveen.mesoketes.model;
  * @version 1.0
  * Jun 21, 2017
  */
-public class West extends WallProperties{
+public class SouthSide extends Side{
 
 }

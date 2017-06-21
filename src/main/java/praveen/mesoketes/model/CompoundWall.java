@@ -16,10 +16,10 @@ package praveen.mesoketes.model;
  */
 public class CompoundWall{
 	
-	private West west;
-	private North north;
-	private East east;
-	private South south;
+	private WestSide westSide;
+	private NorthSide northSide;
+	private EastSide eastSide;
+	private SouthSide southSide;
 
 	/**
 	 * 
@@ -29,59 +29,59 @@ public class CompoundWall{
 	}
 
 	/**
-	 * @return the west
+	 * @return the westSide
 	 */
-	public final West getWest() {
-		return west;
+	public final WestSide getWest() {
+		return westSide;
 	}
 
 	/**
-	 * @return the north
+	 * @return the northSide
 	 */
-	public final North getNorth() {
-		return north;
+	public final NorthSide getNorth() {
+		return northSide;
 	}
 
 	/**
-	 * @return the east
+	 * @return the eastSide
 	 */
-	public final East getEast() {
-		return east;
+	public final EastSide getEast() {
+		return eastSide;
 	}
 
 	/**
-	 * @return the south
+	 * @return the southSide
 	 */
-	public final South getSouth() {
-		return south;
+	public final SouthSide getSouth() {
+		return southSide;
 	}
 
 	/**
-	 * @param west the west to set
+	 * @param westSide the westSide to set
 	 */
-	public final void setWest(West west) {
-		this.west = west;
+	public final void setWest(WestSide westSide) {
+		this.westSide = westSide;
 	}
 
 	/**
-	 * @param north the north to set
+	 * @param northSide the northSide to set
 	 */
-	public final void setNorth(North north) {
-		this.north = north;
+	public final void setNorth(NorthSide northSide) {
+		this.northSide = northSide;
 	}
 
 	/**
-	 * @param east the east to set
+	 * @param eastSide the eastSide to set
 	 */
-	public final void setEast(East east) {
-		this.east = east;
+	public final void setEast(EastSide eastSide) {
+		this.eastSide = eastSide;
 	}
 
 	/**
-	 * @param south the south to set
+	 * @param southSide the southSide to set
 	 */
-	public final void setSouth(South south) {
-		this.south = south;
+	public final void setSouth(SouthSide southSide) {
+		this.southSide = southSide;
 	}
 
 	

@@ -7,7 +7,7 @@
 
 package praveen.mesoketes.base.model.abstraction;
 
-import praveen.mesoketes.base.model.IWallProperties;
+import praveen.mesoketes.base.model.ISide;
 
 /**
  * @author Praveen,Sankarasubramanian
@@ -16,13 +16,13 @@ import praveen.mesoketes.base.model.IWallProperties;
  * @version 1.0
  * Jun 21, 2017
  */
-public abstract class BasicWallProperties implements IWallProperties {
+public abstract class BasicSide implements ISide {
 	
 
 	/**
 	 * 
 	 */
-	public BasicWallProperties() {
+	public BasicSide() {
 		
 	}
 
