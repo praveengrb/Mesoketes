@@ -14,7 +14,7 @@ package praveen.mesoketes.base.model;
  * @version 1.0
  * Jun 20, 2017
  */
-public class BasicAttack implements IAttack{
+public abstract class BasicAttack implements IAttack{
 	//private int day;
 	private int strength;
 	private String tribe;
