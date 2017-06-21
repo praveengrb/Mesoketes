@@ -36,7 +36,7 @@ public class Constants {
 	static Properties properties = new Properties();
 	static {
 		try {
-			properties.load(Constants.class.getClassLoader().getResourceAsStream("application-constant.properties"));
+			properties.load(Constants.class.getClassLoader().getResourceAsStream("application-constants.properties"));
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}

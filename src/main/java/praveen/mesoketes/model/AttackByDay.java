@@ -7,6 +7,7 @@
 
 package praveen.mesoketes.model;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import praveen.mesoketes.base.model.BasicAttackByDay;
@@ -42,9 +43,24 @@ public class AttackByDay extends BasicAttackByDay{
 		setAttacks(builder.getAttacks());
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Attacked:  Day -" + getDay() + ", Attacks -" + getAttacks();
+	}
+
 	public static class DayBuilder implements IBuilder<AttackByDay>{
 		private int day;
-		private List<Attack> attacks;
+		private List<Attack> attacks=new LinkedList<Attack>();
+		public DayBuilder(){
+			super();
+		}
+		
+		public DayBuilder(int day){
+			setDay(day);
+		}
 		/**
 		 * @return the attacks
 		 */
@@ -54,8 +70,8 @@ public class AttackByDay extends BasicAttackByDay{
 		/**
 		 * @param attacks the attacks to set
 		 */
-		public DayBuilder setAttacks(List<Attack> attacks) {
-			this.attacks = attacks;
+		public DayBuilder addAttack(Attack attack) {
+			attacks.add(attack);
 			return this;
 		}
 		/**

@@ -30,6 +30,15 @@ public class Attack extends BasicAttack {
 		setStrength(builder.getStrength());
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Attack: Tribe - " + getTribe() + ", Direction - " + getDirection() + ", Strength - "
+				+ getStrength();
+	}
+
 	public static class AttackBuilder implements IBuilder<Attack> {
 		//private int day;
 		private int strength;
@@ -51,6 +60,20 @@ public class Attack extends BasicAttack {
 			this.day = day;
 			return this;
 		}*/
+
+		/**
+		 * @param tribe
+		 */
+		public AttackBuilder(String tribe) {
+			super();
+			this.tribe = tribe;
+		}
+		/**
+		 * @param tribe
+		 */
+		public AttackBuilder() {
+			super();
+		}
 
 		/**
 		 * @return the strength
