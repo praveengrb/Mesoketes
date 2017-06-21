@@ -91,7 +91,7 @@ public class War<T> extends BasicWar<T>{
 		 */
 		@Override
 		public War<T> build() {
-			return new War<T>(this);
+			return new War<>(this);
 		}
 	}
 

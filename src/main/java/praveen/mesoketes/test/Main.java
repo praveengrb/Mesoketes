@@ -10,7 +10,7 @@ package praveen.mesoketes.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import praveen.mesoketes.base.model.Direction;
+import praveen.mesoketes.base.model.Directions;
 import praveen.mesoketes.model.Attack;
 import praveen.mesoketes.model.Tribe;
 import praveen.mesoketes.model.War;
@@ -56,7 +56,7 @@ public class Main {
 			tribe.setName(bz[0].trim());
 			tribe.setStrength(Integer.parseInt(bz[2].trim()));
 			
-			Attack<Tribe> result = new Attack.AttackBuilder<Tribe>(tribe).setDirection(Direction.getDirection(bz[1].trim())).build();
+			Attack<Tribe> result = new Attack.AttackBuilder<Tribe>(tribe).setDirection(Directions.getDirection(bz[1].trim())).build();
 			alist.add(result);
 			
 		}

@@ -19,16 +19,16 @@ public interface IAttack<T> extends IBase {
 
 
 	/**
-	 * @param direction
+	 * @param directions
 	 */
-	void setDirection(Direction direction);
+	void setDirection(Directions directions);
 
 	
 
 	/**
 	 * @return
 	 */
-	Direction getDirection();
+	Directions getDirection();
 
 	/**
 	 * @param opponent

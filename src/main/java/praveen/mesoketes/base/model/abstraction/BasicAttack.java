@@ -7,7 +7,7 @@
 
 package praveen.mesoketes.base.model.abstraction;
 
-import praveen.mesoketes.base.model.Direction;
+import praveen.mesoketes.base.model.Directions;
 import praveen.mesoketes.base.model.IAttack;
 
 /**
@@ -20,7 +20,7 @@ import praveen.mesoketes.base.model.IAttack;
 public abstract class BasicAttack<T> implements IAttack<T>{
 	//private int day;
 	
-	private Direction direction;
+	private Directions directions;
 	
 	private T opponent;
 
@@ -45,10 +45,10 @@ public abstract class BasicAttack<T> implements IAttack<T>{
 	}
 
 	/**
-	 * @return the direction
+	 * @return the directions
 	 */
-	public final Direction getDirection() {
-		return direction;
+	public final Directions getDirection() {
+		return directions;
 	}
 
 	/**
@@ -59,10 +59,10 @@ public abstract class BasicAttack<T> implements IAttack<T>{
 	}
 
 	/**
-	 * @param direction the direction to set
+	 * @param directions the directions to set
 	 */
-	public final void setDirection(Direction direction) {
-		this.direction = direction;
+	public final void setDirection(Directions directions) {
+		this.directions = directions;
 	}
 
 	/**

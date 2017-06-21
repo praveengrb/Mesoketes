@@ -16,12 +16,12 @@ import praveen.mesoketes.common.Constants;
  * @version 1.0
  * Jun 20, 2017
  */
-public enum Direction {
+public enum Directions {
 	N(Constants.NORTH),E(Constants.EAST),W(Constants.WEST),S(Constants.SOUTH);
 	
 	
 	private String direction;
-	Direction(String direction){
+	Directions(String direction){
 		this.setDirection(direction);
 	}
 	/**
@@ -37,16 +37,16 @@ public enum Direction {
 		this.direction = direction;
 	}
 	
-	public static Direction getDirection(String direction){
-		Direction d = Direction.N;
+	public static Directions getDirection(String direction){
+		Directions d = Directions.N;
 		if (Constants.SOUTH.equalsIgnoreCase(direction)) {
-			d=Direction.S;
+			d=Directions.S;
 		} 
 		else if (Constants.EAST.equalsIgnoreCase(direction)) {
-			d=Direction.E;
+			d=Directions.E;
 		} 
 		else if (Constants.WEST.equalsIgnoreCase(direction)) {
-			d=Direction.W;
+			d=Directions.W;
 		} 
 
 		return d;

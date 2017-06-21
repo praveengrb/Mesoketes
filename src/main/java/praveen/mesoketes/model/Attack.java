@@ -7,7 +7,7 @@
 
 package praveen.mesoketes.model;
 
-import praveen.mesoketes.base.model.Direction;
+import praveen.mesoketes.base.model.Directions;
 import praveen.mesoketes.base.model.IBuilder;
 import praveen.mesoketes.base.model.abstraction.BasicAttack;
 
@@ -34,13 +34,13 @@ public class Attack<T> extends BasicAttack<T> {
 	 */
 	@Override
 	public String toString() {
-		return "Attack: Opponent - " + getOpponent() + ", Direction - " + getDirection();
+		return "Attack: Opponent - " + getOpponent() + ", Directions - " + getDirection();
 	}
 
 	public static class AttackBuilder<BT> implements IBuilder<Attack<BT>> {
 		// private int day;
 		private BT opponent;
-		private Direction direction;
+		private Directions directions;
 
 		/**
 		 * @param tribe
@@ -74,18 +74,18 @@ public class Attack<T> extends BasicAttack<T> {
 		}
 
 		/**
-		 * @return the direction
+		 * @return the directions
 		 */
-		public final Direction getDirection() {
-			return direction;
+		public final Directions getDirection() {
+			return directions;
 		}
 
 		/**
-		 * @param direction
-		 *            the direction to set
+		 * @param directions
+		 *            the directions to set
 		 */
-		public final AttackBuilder<BT> setDirection(Direction direction) {
-			this.direction = direction;
+		public final AttackBuilder<BT> setDirection(Directions directions) {
+			this.directions = directions;
 			return this;
 		}
 
@@ -94,7 +94,7 @@ public class Attack<T> extends BasicAttack<T> {
 		 */
 		@Override
 		public final Attack<BT> build() {
-			return new Attack<BT>(this);
+			return new Attack<>(this);
 		}
 
 	}
