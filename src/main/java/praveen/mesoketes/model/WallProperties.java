@@ -7,7 +7,7 @@
 
 package praveen.mesoketes.model;
 
-import praveen.mesoketes.base.model.BasicWallProperties;
+import praveen.mesoketes.base.model.abstraction.BasicWallProperties;
 
 /**
  * @author Praveen,Sankarasubramanian

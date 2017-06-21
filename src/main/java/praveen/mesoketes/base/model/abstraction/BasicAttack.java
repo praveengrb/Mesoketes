@@ -5,7 +5,10 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base.model;
+package praveen.mesoketes.base.model.abstraction;
+
+import praveen.mesoketes.base.model.Direction;
+import praveen.mesoketes.base.model.IAttack;
 
 /**
  * @author Praveen,Sankarasubramanian

@@ -5,10 +5,11 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base.model;
+package praveen.mesoketes.base.model.abstraction;
 
 import java.util.List;
 
+import praveen.mesoketes.base.model.IWar;
 import praveen.mesoketes.model.Attack;
 
 /**

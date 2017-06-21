@@ -5,7 +5,9 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base.model;
+package praveen.mesoketes.base.model.abstraction;
+
+import praveen.mesoketes.base.model.IWallProperties;
 
 /**
  * @author Praveen,Sankarasubramanian

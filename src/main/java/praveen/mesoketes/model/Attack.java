@@ -7,9 +7,9 @@
 
 package praveen.mesoketes.model;
 
-import praveen.mesoketes.base.model.BasicAttack;
 import praveen.mesoketes.base.model.Direction;
 import praveen.mesoketes.base.model.IBuilder;
+import praveen.mesoketes.base.model.abstraction.BasicAttack;
 
 /**
  * @author Praveen,Sankarasubramanian

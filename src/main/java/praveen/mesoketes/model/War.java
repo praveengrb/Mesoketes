@@ -9,8 +9,8 @@ package praveen.mesoketes.model;
 
 import java.util.List;
 
-import praveen.mesoketes.base.model.BasicWar;
 import praveen.mesoketes.base.model.IBuilder;
+import praveen.mesoketes.base.model.abstraction.BasicWar;
 
 /**
  * @author Praveen,Sankarasubramanian
