@@ -12,7 +12,7 @@ import java.util.List;
 
 import praveen.mesoketes.base.model.Direction;
 import praveen.mesoketes.model.Attack;
-import praveen.mesoketes.model.AttackByDay;
+import praveen.mesoketes.model.War;
 import praveen.mesoketes.model.CompoundWall;
 
 /**
@@ -27,9 +27,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-	/*	List<AttackByDay> attacks = new ArrayList<AttackByDay>();
+	/*	List<War> attacks = new ArrayList<War>();
 
-		AttackByDay attackByDay = new AttackByDay.DayBuilder(1)
+		War attackByDay = new War.DayBuilder(1)
 				.addAttack(new Attack.AttackBuilder("T1").
 						setStrength(4)
 						.setDirection(Direction.E)
@@ -39,7 +39,7 @@ public class Main {
 						.setDirection(Direction.S)
 						.build()).build();
 		attacks.add(attackByDay);
-		attackByDay = new AttackByDay.DayBuilder(2)
+		attackByDay = new War.DayBuilder(2)
 				.addAttack(new Attack.AttackBuilder("T1").
 						setStrength(4)
 						.setDirection(Direction.E)
@@ -59,14 +59,14 @@ public class Main {
 			 "Day 2; T1 - E - 4: T2 - N - 3: T3 - S - 2",
 			 "Day 3; T1 - W - 3: T2 - E - 5: T3 - N - 2"
 					};
-		List<AttackByDay> attackz = new ArrayList<>();
+		List<War> attackz = new ArrayList<>();
 		for (String attack : attacks) {
 			attackz.add(formAttack(attack));
 		}
 		System.out.println(attackz);
 	}
 	
-	public static AttackByDay formAttack(String attack){
+	public static War formAttack(String attack){
 		String[] dayAttack=attack.split(";");
 		String day = dayAttack[0];
 		String[] attacks = dayAttack[1].split(":");
@@ -78,8 +78,8 @@ public class Main {
 			alist.add(new Attack.AttackBuilder(bz[0].trim())
 					.setDirection(Direction.getDirection(bz[1].trim())).setStrength(Integer.parseInt(bz[2].trim())).build());
 		}
-		AttackByDay attackByDay= new AttackByDay.DayBuilder(day).setAttacks(alist).build();
-		return attackByDay;
+		War war= new War.DayBuilder(day).setAttacks(alist).build();
+		return war;
 	}
 
 }

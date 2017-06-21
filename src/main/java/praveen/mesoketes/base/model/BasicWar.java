@@ -18,15 +18,15 @@ import praveen.mesoketes.model.Attack;
  * @version 1.0
  * Jun 21, 2017
  */
-public abstract class BasicAttackByDay implements IAttackByDay {
+public abstract class BasicWar implements IWar {
 	private String day;
 	private List<Attack> attacks;
 
-	public BasicAttackByDay() {
+	public BasicWar() {
 		super();
 	}
 	
-	public BasicAttackByDay(String day) {
+	public BasicWar(String day) {
 		super();
 		setDay(day);
 	}
