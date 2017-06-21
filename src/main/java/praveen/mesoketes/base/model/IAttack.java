@@ -14,32 +14,16 @@ package praveen.mesoketes.base.model;
  * @version 1.0
  * Jun 20, 2017
  */
-public interface IAttack extends IBase {
+public interface IAttack<T> extends IBase {
 
-	/**
-	 * @param day
-	 */
-	//void setDay(int day);
 
-	/**
-	 * @param tribe
-	 */
-	void setTribe(String tribe);
-
-	/**
-	 * @return
-	 */
-	int getStrength();
 
 	/**
 	 * @param direction
 	 */
 	void setDirection(Direction direction);
 
-	/**
-	 * @param strength
-	 */
-	void setStrength(int strength);
+	
 
 	/**
 	 * @return
@@ -47,13 +31,13 @@ public interface IAttack extends IBase {
 	Direction getDirection();
 
 	/**
-	 * @return
+	 * @param opponent
 	 */
-	String getTribe();
-
+	void setOpponent(T opponent);
+	
 	/**
 	 * @return
 	 */
-	//int getDay();
+	T getOpponent();
 
 }

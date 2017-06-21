@@ -19,9 +19,9 @@ import praveen.mesoketes.model.Attack;
  * @version 1.0
  * Jun 21, 2017
  */
-public abstract class BasicWar implements IWar {
+public abstract class BasicWar<T> implements IWar<T> {
 	private String day;
-	private List<Attack> attacks;
+	private List<Attack<T>> attacks;
 
 	public BasicWar() {
 		super();
@@ -37,7 +37,7 @@ public abstract class BasicWar implements IWar {
 	 * @return the attacks
 	 */
 	@Override
-	public List<Attack> getAttacks() {
+	public List<Attack<T>> getAttacks() {
 		return attacks;
 	}
 
@@ -54,7 +54,7 @@ public abstract class BasicWar implements IWar {
 	 *            the attacks to set
 	 */
 	@Override
-	public void setAttacks(final List<Attack> attacks) {
+	public void setAttacks(final List<Attack<T>> attacks) {
 		this.attacks = attacks;
 	}
 

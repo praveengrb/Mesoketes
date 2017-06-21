@@ -18,7 +18,7 @@ import praveen.mesoketes.model.Attack;
  * @version 1.0
  * Jun 21, 2017
  */
-public interface IWar extends IBase{
+public interface IWar<T> extends IBase{
 
 	/**
 	 * @param day
@@ -33,11 +33,11 @@ public interface IWar extends IBase{
 	/**
 	 * @param attacks
 	 */
-	void setAttacks(List<Attack> attacks);
+	void setAttacks(List<Attack<T>> attacks);
 
 	/**
 	 * @return
 	 */
-	List<Attack> getAttacks();
+	List<Attack<T>> getAttacks();
 
 }

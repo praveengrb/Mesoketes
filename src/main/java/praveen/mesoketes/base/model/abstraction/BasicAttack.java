@@ -17,100 +17,61 @@ import praveen.mesoketes.base.model.IAttack;
  * @version 1.0
  * Jun 20, 2017
  */
-public abstract class BasicAttack implements IAttack{
+public abstract class BasicAttack<T> implements IAttack<T>{
 	//private int day;
-	private int strength;
-	private String tribe;
+	
 	private Direction direction;
+	
+	private T opponent;
 
 	/**
 	 * @param day 
 	 * 
 	 */
 	
-	/**
-	 * @param day 
-	 * 
-	 */
-	public BasicAttack(final String tribe) {
-		super();
-		//this.setDay(day);
-		this.setTribe(tribe);
-	}
-
+	
 	/**
 	 * 
 	 */
 	public BasicAttack() {
-		
+		super();
 	}
-
+	
 	/**
-	 * @return the day
+	 * 
 	 */
-	/*@Override
-	public int getDay() {
-		return day;
-	}*/
-
-	/**
-	 * @param day
-	 *            the day to set
-	 */
-	/*@Override
-	public void setDay(int day) {
-		this.day = day;
-	}*/
-
-	/**
-	 * @return the strength
-	 */
-	@Override
-	public int getStrength() {
-		return strength;
-	}
-
-	/**
-	 * @param strength
-	 *            the strength to set
-	 */
-	@Override
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
-
-	/**
-	 * @return the tribe
-	 */
-	@Override
-	public String getTribe() {
-		return tribe;
-	}
-
-	/**
-	 * @param tribe
-	 *            the tribe to set
-	 */
-	@Override
-	public void setTribe(String tribe) {
-		this.tribe = tribe;
+	public BasicAttack(T opponent) {
+		setOpponent(opponent);
 	}
 
 	/**
 	 * @return the direction
 	 */
-	@Override
-	public Direction getDirection() {
+	public final Direction getDirection() {
 		return direction;
 	}
 
 	/**
-	 * @param direction
-	 *            the direction to set
+	 * @return the opponent
 	 */
-	@Override
-	public void setDirection(Direction direction) {
+	public final T getOpponent() {
+		return opponent;
+	}
+
+	/**
+	 * @param direction the direction to set
+	 */
+	public final void setDirection(Direction direction) {
 		this.direction = direction;
 	}
+
+	/**
+	 * @param opponent the opponent to set
+	 */
+	public final void setOpponent(T opponent) {
+		this.opponent = opponent;
+	}
+
+
 
 }

@@ -12,8 +12,8 @@ import java.util.List;
 
 import praveen.mesoketes.base.model.Direction;
 import praveen.mesoketes.model.Attack;
+import praveen.mesoketes.model.Tribe;
 import praveen.mesoketes.model.War;
-import praveen.mesoketes.model.CompoundWall;
 
 /**
  * @author Praveen,Sankarasubramanian
@@ -27,29 +27,6 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-	/*	List<War> attacks = new ArrayList<War>();
-
-		War attackByDay = new War.DayBuilder(1)
-				.addAttack(new Attack.AttackBuilder("T1").
-						setStrength(4)
-						.setDirection(Direction.E)
-						.build())
-				.addAttack(new Attack.AttackBuilder("T2").
-						setStrength(4)
-						.setDirection(Direction.S)
-						.build()).build();
-		attacks.add(attackByDay);
-		attackByDay = new War.DayBuilder(2)
-				.addAttack(new Attack.AttackBuilder("T1").
-						setStrength(4)
-						.setDirection(Direction.E)
-						.build())
-				.addAttack(new Attack.AttackBuilder("T2").
-						setStrength(4)
-						.setDirection(Direction.S)
-						.build()).build();
-		attacks.add(attackByDay);*/
-		//System.out.println(attacks);
 		testAttacks();
 	}
 	
@@ -59,26 +36,31 @@ public class Main {
 			 "Day 2; T1 - E - 4: T2 - N - 3: T3 - S - 2",
 			 "Day 3; T1 - W - 3: T2 - E - 5: T3 - N - 2"
 					};
-		List<War> attackz = new ArrayList<>();
+		List<War<Tribe>> attackz = new ArrayList<>();
 		for (String attack : attacks) {
 			attackz.add(formAttack(attack));
 		}
 		System.out.println(attackz);
 	}
 	
-	public static War formAttack(String attack){
+	public static War<Tribe> formAttack(String attack){
 		String[] dayAttack=attack.split(";");
 		String day = dayAttack[0];
 		String[] attacks = dayAttack[1].split(":");
-		List<Attack> alist = new ArrayList<Attack>();
+		List<Attack<Tribe>> alist = new ArrayList<Attack<Tribe>>();
 		for (String a : attacks) {
 			a=a.trim();
 			//System.out.println("Attack " + a);
 			String [] bz = a.split("-");
-			alist.add(new Attack.AttackBuilder(bz[0].trim())
-					.setDirection(Direction.getDirection(bz[1].trim())).setStrength(Integer.parseInt(bz[2].trim())).build());
+			Tribe tribe = new Tribe();
+			tribe.setName(bz[0].trim());
+			tribe.setStrength(Integer.parseInt(bz[2].trim()));
+			
+			Attack<Tribe> result = new Attack.AttackBuilder<Tribe>(tribe).setDirection(Direction.getDirection(bz[1].trim())).build();
+			alist.add(result);
+			
 		}
-		War war= new War.DayBuilder(day).setAttacks(alist).build();
+		War<Tribe> war= new War.DayBuilder<Tribe>(day).setAttacks(alist).build();
 		return war;
 	}
 

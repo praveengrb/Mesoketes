@@ -17,57 +17,39 @@ import praveen.mesoketes.base.model.abstraction.BasicAttack;
  * @since 1.0
  * @version 1.0 Jun 20, 2017
  */
-public class Attack extends BasicAttack {
+public class Attack<T> extends BasicAttack<T> {
 	public Attack() {
 		super();
 	}
 
-	
-
-	private Attack(AttackBuilder builder) {
-		super(builder.getTribe());
+	private Attack(AttackBuilder<T> builder) {
+		super(builder.getOpponent());
 		setDirection(builder.getDirection());
-		setStrength(builder.getStrength());
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Attack: Tribe - " + getTribe() + ", Direction - " + getDirection() + ", Strength - "
-				+ getStrength();
+		return "Attack: Opponent - " + getOpponent() + ", Direction - " + getDirection();
 	}
 
-	public static class AttackBuilder implements IBuilder<Attack> {
-		//private int day;
-		private int strength;
-		private String tribe;
+	public static class AttackBuilder<BT> implements IBuilder<Attack<BT>> {
+		// private int day;
+		private BT opponent;
 		private Direction direction;
-
-		/**
-		 * @return the day
-		 *//*
-		public final int getDay() {
-			return day;
-		}
-*/
-		/**
-		 * @param day
-		 *            the day to set
-		 */
-	/*	public final AttackBuilder setDay(int day) {
-			this.day = day;
-			return this;
-		}*/
 
 		/**
 		 * @param tribe
 		 */
-		public AttackBuilder(String tribe) {
+		public AttackBuilder(BT opponent) {
 			super();
-			this.tribe = tribe;
+			this.opponent = opponent;
 		}
+
 		/**
 		 * @param tribe
 		 */
@@ -76,34 +58,18 @@ public class Attack extends BasicAttack {
 		}
 
 		/**
-		 * @return the strength
-		 */
-		public final int getStrength() {
-			return strength;
-		}
-
-		/**
-		 * @param strength
-		 *            the strength to set
-		 */
-		public final AttackBuilder setStrength(int strength) {
-			this.strength = strength;
-			return this;
-		}
-
-		/**
 		 * @return the tribe
 		 */
-		public final String getTribe() {
-			return tribe;
+		public final BT getOpponent() {
+			return opponent;
 		}
 
 		/**
 		 * @param tribe
 		 *            the tribe to set
 		 */
-		public final AttackBuilder setTribe(String tribe) {
-			this.tribe = tribe;
+		public final AttackBuilder<BT> setOpponent(BT opponent) {
+			this.opponent = opponent;
 			return this;
 		}
 
@@ -118,7 +84,7 @@ public class Attack extends BasicAttack {
 		 * @param direction
 		 *            the direction to set
 		 */
-		public final AttackBuilder setDirection(Direction direction) {
+		public final AttackBuilder<BT> setDirection(Direction direction) {
 			this.direction = direction;
 			return this;
 		}
@@ -127,8 +93,8 @@ public class Attack extends BasicAttack {
 		 * @return
 		 */
 		@Override
-		public final Attack build() {
-			return new Attack(this);
+		public final Attack<BT> build() {
+			return new Attack<BT>(this);
 		}
 
 	}

@@ -18,7 +18,7 @@ import praveen.mesoketes.base.model.abstraction.BasicWar;
  * @since 1.0
  * @version 1.0 Jun 21, 2017
  */
-public class War extends BasicWar{
+public class War<T> extends BasicWar<T>{
 
 	/**
 	 * 
@@ -37,7 +37,7 @@ public class War extends BasicWar{
 	/**
 	 * @param day
 	 */
-	private War(DayBuilder builder) {
+	private War(DayBuilder<T> builder) {
 		super(builder.getDay());
 		setAttacks(builder.getAttacks());
 	}
@@ -50,9 +50,9 @@ public class War extends BasicWar{
 		return "Attacked:  Day -" + getDay() + ", Attacks -" + getAttacks();
 	}
 
-	public static class DayBuilder implements IBuilder<War>{
+	public static class DayBuilder<T> implements IBuilder<War<T>>{
 		private String day;
-		private List<Attack> attacks;
+		private List<Attack<T>> attacks;
 		public DayBuilder(){
 			super();
 		}
@@ -63,17 +63,13 @@ public class War extends BasicWar{
 		/**
 		 * @return the attacks
 		 */
-		public List<Attack> getAttacks() {
+		public List<Attack<T>> getAttacks() {
 			return attacks;
 		}
 		/**
 		 * @param attacks the attacks to set
 		 */
-	/*	public DayBuilder addAttack(Attack attack) {
-			attacks.add(attack);
-			return this;
-		}*/
-		public DayBuilder setAttacks(List<Attack> attacks) {
+		public DayBuilder<T> setAttacks(List<Attack<T>> attacks) {
 			this.attacks=attacks;
 			return this;
 		}
@@ -86,7 +82,7 @@ public class War extends BasicWar{
 		/**
 		 * @param day the day to set
 		 */
-		public DayBuilder setDay(String day) {
+		public DayBuilder<T> setDay(String day) {
 			this.day = day;
 			return this;
 		}
@@ -94,8 +90,8 @@ public class War extends BasicWar{
 		 * @see praveen.mesoketes.base.model.IBuilder#build()
 		 */
 		@Override
-		public War build() {
-			return new War(this);
+		public War<T> build() {
+			return new War<T>(this);
 		}
 	}
 
