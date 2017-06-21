@@ -20,20 +20,35 @@ public enum Direction {
 	N(Constants.NORTH),E(Constants.EAST),W(Constants.WEST),S(Constants.SOUTH);
 	
 	
-	private char direction;
-	Direction(char direction){
+	private String direction;
+	Direction(String direction){
 		this.setDirection(direction);
 	}
 	/**
 	 * @return the direction
 	 */
-	public char getDirection() {
+	public String getDirection() {
 		return direction;
 	}
 	/**
 	 * @param direction the direction to set
 	 */
-	public void setDirection(char direction) {
+	public void setDirection(String direction) {
 		this.direction = direction;
+	}
+	
+	public static Direction getDirection(String direction){
+		Direction d = Direction.N;
+		if (Constants.SOUTH.equalsIgnoreCase(direction)) {
+			d=Direction.S;
+		} 
+		else if (Constants.EAST.equalsIgnoreCase(direction)) {
+			d=Direction.E;
+		} 
+		else if (Constants.WEST.equalsIgnoreCase(direction)) {
+			d=Direction.W;
+		} 
+
+		return d;
 	}
 }

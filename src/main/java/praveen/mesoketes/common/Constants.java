@@ -52,16 +52,16 @@ public class Constants {
 	 */
 
 	/** The Constant NORTH. Represents N  */
-	public static final char NORTH = properties.getProperty("direction.north").charAt(0);
+	public static final String NORTH = properties.getProperty("direction.north");
 
 	/** The Constant EAST. Represents E*/
-	public static final char EAST = properties.getProperty("direction.east").charAt(0);
+	public static final String EAST = properties.getProperty("direction.east");
 
 	/** The Constant WEST. Represents W*/
-	public static final char WEST = properties.getProperty("direction.west").charAt(0);
+	public static final String WEST = properties.getProperty("direction.west");
 
 	/** The Constant SOUTH. Represents S*/
-	public static final char SOUTH = properties.getProperty("direction.south").charAt(0);
+	public static final String SOUTH = properties.getProperty("direction.south");
 	/*
 	 * DIRECTION CONSTANTS-- END
 	 * 

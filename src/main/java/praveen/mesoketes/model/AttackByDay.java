@@ -31,7 +31,7 @@ public class AttackByDay extends BasicAttackByDay{
 	/**
 	 * @param day
 	 */
-	public AttackByDay(int day) {
+	public AttackByDay(String day) {
 		super(day);
 	}
 	
@@ -52,13 +52,13 @@ public class AttackByDay extends BasicAttackByDay{
 	}
 
 	public static class DayBuilder implements IBuilder<AttackByDay>{
-		private int day;
-		private List<Attack> attacks=new LinkedList<Attack>();
+		private String day;
+		private List<Attack> attacks;
 		public DayBuilder(){
 			super();
 		}
 		
-		public DayBuilder(int day){
+		public DayBuilder(String day){
 			setDay(day);
 		}
 		/**
@@ -70,20 +70,24 @@ public class AttackByDay extends BasicAttackByDay{
 		/**
 		 * @param attacks the attacks to set
 		 */
-		public DayBuilder addAttack(Attack attack) {
+	/*	public DayBuilder addAttack(Attack attack) {
 			attacks.add(attack);
+			return this;
+		}*/
+		public DayBuilder setAttacks(List<Attack> attacks) {
+			this.attacks=attacks;
 			return this;
 		}
 		/**
 		 * @return the day
 		 */
-		public int getDay() {
+		public String getDay() {
 			return day;
 		}
 		/**
 		 * @param day the day to set
 		 */
-		public DayBuilder setDay(int day) {
+		public DayBuilder setDay(String day) {
 			this.day = day;
 			return this;
 		}

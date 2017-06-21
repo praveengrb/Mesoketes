@@ -27,7 +27,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		List<AttackByDay> attacks = new ArrayList<AttackByDay>();
+	/*	List<AttackByDay> attacks = new ArrayList<AttackByDay>();
 
 		AttackByDay attackByDay = new AttackByDay.DayBuilder(1)
 				.addAttack(new Attack.AttackBuilder("T1").
@@ -48,9 +48,38 @@ public class Main {
 						setStrength(4)
 						.setDirection(Direction.S)
 						.build()).build();
-		attacks.add(attackByDay);
-		System.out.println(attacks);
-
+		attacks.add(attackByDay);*/
+		//System.out.println(attacks);
+		testAttacks();
+	}
+	
+	public static void testAttacks(){
+		String attacks[]=
+			{"Day 1; T1 - N - 3: T2 - S - 4: T3 - W - 2",
+			 "Day 2; T1 - E - 4: T2 - N - 3: T3 - S - 2",
+			 "Day 3; T1 - W - 3: T2 - E - 5: T3 - N - 2"
+					};
+		List<AttackByDay> attackz = new ArrayList<>();
+		for (String attack : attacks) {
+			attackz.add(formAttack(attack));
+		}
+		System.out.println(attackz);
+	}
+	
+	public static AttackByDay formAttack(String attack){
+		String[] dayAttack=attack.split(";");
+		String day = dayAttack[0];
+		String[] attacks = dayAttack[1].split(":");
+		List<Attack> alist = new ArrayList<Attack>();
+		for (String a : attacks) {
+			a=a.trim();
+			//System.out.println("Attack " + a);
+			String [] bz = a.split("-");
+			alist.add(new Attack.AttackBuilder(bz[0].trim())
+					.setDirection(Direction.getDirection(bz[1].trim())).setStrength(Integer.parseInt(bz[2].trim())).build());
+		}
+		AttackByDay attackByDay= new AttackByDay.DayBuilder(day).setAttacks(alist).build();
+		return attackByDay;
 	}
 
 }

@@ -23,12 +23,12 @@ public interface IAttackByDay extends IBase{
 	/**
 	 * @param day
 	 */
-	void setDay(int day);
+	void setDay(String day);
 
 	/**
 	 * @return
 	 */
-	int getDay();
+	String getDay();
 
 	/**
 	 * @param attacks

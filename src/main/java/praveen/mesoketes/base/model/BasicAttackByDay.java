@@ -19,14 +19,14 @@ import praveen.mesoketes.model.Attack;
  * Jun 21, 2017
  */
 public abstract class BasicAttackByDay implements IAttackByDay {
-	private int day;
+	private String day;
 	private List<Attack> attacks;
 
 	public BasicAttackByDay() {
 		super();
 	}
 	
-	public BasicAttackByDay(int day) {
+	public BasicAttackByDay(String day) {
 		super();
 		setDay(day);
 	}
@@ -44,7 +44,7 @@ public abstract class BasicAttackByDay implements IAttackByDay {
 	 * @return the day
 	 */
 	@Override
-	public int getDay() {
+	public String getDay() {
 		return day;
 	}
 
@@ -62,7 +62,7 @@ public abstract class BasicAttackByDay implements IAttackByDay {
 	 *            the day to set
 	 */
 	@Override
-	public void setDay(final int day) {
+	public void setDay(final String day) {
 		this.day = day;
 	}
 }
