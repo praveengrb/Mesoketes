@@ -5,7 +5,7 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base;
+package praveen.mesoketes.base.model;
 
 import praveen.mesoketes.common.Constants;
 

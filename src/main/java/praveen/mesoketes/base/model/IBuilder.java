@@ -4,23 +4,16 @@
 * Proprietary and confidential
 * 
 *******************************************************/
-package praveen.mesoketes.base;
 
-import org.apache.log4j.Logger;
-
+package praveen.mesoketes.base.model;
 
 /**
- * Base Interface has the basic properties
- * 
- * @since 1.0
  * @author Praveen,Sankarasubramanian
+ *
+ * @since 1.0
  * @version 1.0
+ * Jun 20, 2017
  */
-public interface IBase {
-	/**
-	 * @return
-	 */
-	default Logger log(){
-		return Logger.getLogger(getClass());
-	}
+public interface IBuilder<T> {
+	T build();
 }

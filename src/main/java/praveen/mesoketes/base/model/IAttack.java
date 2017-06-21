@@ -5,7 +5,7 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base;
+package praveen.mesoketes.base.model;
 
 /**
  * @author Praveen,Sankarasubramanian
@@ -19,7 +19,7 @@ public interface IAttack extends IBase {
 	/**
 	 * @param day
 	 */
-	void setDay(int day);
+	//void setDay(int day);
 
 	/**
 	 * @param tribe
@@ -54,6 +54,6 @@ public interface IAttack extends IBase {
 	/**
 	 * @return
 	 */
-	int getDay();
+	//int getDay();
 
 }

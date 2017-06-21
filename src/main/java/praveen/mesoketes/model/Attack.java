@@ -7,9 +7,9 @@
 
 package praveen.mesoketes.model;
 
-import praveen.mesoketes.base.BasicAttack;
-import praveen.mesoketes.base.Builder;
-import praveen.mesoketes.base.Direction;
+import praveen.mesoketes.base.model.BasicAttack;
+import praveen.mesoketes.base.model.Direction;
+import praveen.mesoketes.base.model.IBuilder;
 
 /**
  * @author Praveen,Sankarasubramanian
@@ -25,32 +25,32 @@ public class Attack extends BasicAttack {
 	
 
 	private Attack(AttackBuilder builder) {
-		super(builder.getDay(), builder.getTribe());
+		super(builder.getTribe());
 		setDirection(builder.getDirection());
 		setStrength(builder.getStrength());
 	}
 
-	public static class AttackBuilder implements Builder<Attack> {
-		private int day;
+	public static class AttackBuilder implements IBuilder<Attack> {
+		//private int day;
 		private int strength;
 		private String tribe;
 		private Direction direction;
 
 		/**
 		 * @return the day
-		 */
+		 *//*
 		public final int getDay() {
 			return day;
 		}
-
+*/
 		/**
 		 * @param day
 		 *            the day to set
 		 */
-		public final AttackBuilder setDay(int day) {
+	/*	public final AttackBuilder setDay(int day) {
 			this.day = day;
 			return this;
-		}
+		}*/
 
 		/**
 		 * @return the strength

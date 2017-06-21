@@ -5,7 +5,7 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base;
+package praveen.mesoketes.base.model;
 
 /**
  * @author Praveen,Sankarasubramanian
@@ -15,7 +15,7 @@ package praveen.mesoketes.base;
  * Jun 20, 2017
  */
 public class BasicAttack implements IAttack{
-	private int day;
+	//private int day;
 	private int strength;
 	private String tribe;
 	private Direction direction;
@@ -24,18 +24,14 @@ public class BasicAttack implements IAttack{
 	 * @param day 
 	 * 
 	 */
-	public BasicAttack(int day) {
-		super();
-		setDay(day);
-	}
 	
 	/**
 	 * @param day 
 	 * 
 	 */
-	public BasicAttack(final int day,final String tribe) {
+	public BasicAttack(final String tribe) {
 		super();
-		this.setDay(day);
+		//this.setDay(day);
 		this.setTribe(tribe);
 	}
 
@@ -49,19 +45,19 @@ public class BasicAttack implements IAttack{
 	/**
 	 * @return the day
 	 */
-	@Override
+	/*@Override
 	public int getDay() {
 		return day;
-	}
+	}*/
 
 	/**
 	 * @param day
 	 *            the day to set
 	 */
-	@Override
+	/*@Override
 	public void setDay(int day) {
 		this.day = day;
-	}
+	}*/
 
 	/**
 	 * @return the strength

@@ -36,7 +36,7 @@ public class Constants {
 	static Properties properties = new Properties();
 	static {
 		try {
-			properties.load(Constants.class.getClassLoader().getResourceAsStream("configuration.properties"));
+			properties.load(Constants.class.getClassLoader().getResourceAsStream("application-constant.properties"));
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
@@ -62,5 +62,8 @@ public class Constants {
 
 	/** The Constant SOUTH. Represents S*/
 	public static final char SOUTH = properties.getProperty("direction.south").charAt(0);
-
+	/*
+	 * DIRECTION CONSTANTS-- END
+	 * 
+	 */
 }

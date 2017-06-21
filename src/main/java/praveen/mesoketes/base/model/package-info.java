@@ -5,15 +5,11 @@
 * 
 *******************************************************/
 
-package praveen.mesoketes.base;
-
 /**
  * @author Praveen,Sankarasubramanian
  *
  * @since 1.0
  * @version 1.0
- * Jun 20, 2017
+ * Jun 21, 2017
  */
-public interface Builder<T> {
-	T build();
-}
+package praveen.mesoketes.base.model;
