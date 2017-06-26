@@ -21,17 +21,21 @@ public class MesoketesService implements IBase{
 	private void getListOfWar(String warPatterns[]){
 		//List<War<Tribe>> attackz = new ArrayList<>();
 		AttackAdapter adapter = new AttackAdapter();
+		WarResult<Tribe> params = new WarResult<Tribe>();
 		for (String warPattern : warPatterns) {
 			War<Tribe> war = adapter.formWar(warPattern);
 			List<Attack<Tribe>> attacks=war.getAttacks();
+			
 			for (Attack<Tribe> attack : attacks) {
 				AttackFrom<Tribe> factory = new AttackFromFactory<Tribe>(attack.getDirection()).getInstance();
-				WarResult warResult = factory.attack(attack);
-				System.out.println("Result" + warResult);
+				params.setAttack(attack);
+				factory.attack(params);
+				//params.setSucceededAttacks(params.getSucceededAttacks()+  temp.getSucceededAttacks());
+				
 				
 			}
-			
+			System.out.println("Success after iteration" + params.getSucceededAttacks());
 		}
-		////return attackz;
+		System.out.println(params.getSucceededAttacks());
 	}
 }

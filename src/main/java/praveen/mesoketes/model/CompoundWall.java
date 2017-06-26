@@ -26,6 +26,11 @@ public class CompoundWall{
 	 */
 	public CompoundWall() {
 		super();
+		setEast(new EastSide());
+		setWest(new WestSide());
+		setNorth(new NorthSide());
+		setSouth(new SouthSide());
+		
 	}
 
 	/**

@@ -1,12 +1,22 @@
 package praveen.mesoketes.model;
 
-public class WarResult {
+public class WarResult<T> {
 	
 	private int succeededAttacks;
 	
 	private int failedAttacks;
 	
 	private CompoundWall compoundWall;
+	
+	private Attack<T> attack;
+
+	/**
+	 * 
+	 */
+	public WarResult() {
+		super();
+		setCompoundWall(new CompoundWall());
+	}
 
 	/**
 	 * @return the succeededAttacks
@@ -57,6 +67,20 @@ public class WarResult {
 	public String toString() {
 		return "WarResult [succeededAttacks=" + succeededAttacks + ", failedAttacks=" + failedAttacks
 				+ ", compoundWall=" + compoundWall + "]";
+	}
+
+	/**
+	 * @return the attack
+	 */
+	public Attack<T> getAttack() {
+		return attack;
+	}
+
+	/**
+	 * @param attack the attack to set
+	 */
+	public void setAttack(Attack<T> attack) {
+		this.attack = attack;
 	}
 
 }

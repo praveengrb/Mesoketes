@@ -5,15 +5,27 @@ import praveen.mesoketes.model.Attack;
 import praveen.mesoketes.model.Tribe;
 import praveen.mesoketes.model.WarResult;
 
-public class AttackFromWestSide<T> extends AttackFrom<T>{
+public class AttackFromWestSide<T> extends AttackFrom<T> {
 
 	@Override
-	public WarResult attack(Attack<T> attack) {
-		//TODO 
-		WarResult result= new WarResult();
-		Tribe tribe=(Tribe)attack.getOpponent();
-		result=increaseWallHeight(tribe.getStrength(),0);
-		return result;
+	public WarResult<T> attack(WarResult<T> warResult) {
+		Attack<T> attack = warResult.getAttack();
+		Tribe tribe = (Tribe) attack.getOpponent();
+		// WarResult tempResult=increaseWallHeight(tribe.getStrength(),0);
+
+		if (tribe.getStrength() > warResult.getCompoundWall().getWest().getHeight()) {
+			//log().info("Attack succeeded");
+			warResult.setSucceededAttacks(warResult.getSucceededAttacks() + 1);
+			// log().info("Increase height of wall by "+ (strength-height));
+			warResult.getCompoundWall().getWest().setHeight(tribe.getStrength());
+
+		} else {
+			warResult.setFailedAttacks(warResult.getFailedAttacks() + 1);
+
+		}
+
+		// warResult.setCompoundWall(compoundWall);
+		return warResult;
 	}
 
 }

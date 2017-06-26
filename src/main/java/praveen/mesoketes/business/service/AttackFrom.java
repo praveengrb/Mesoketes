@@ -1,7 +1,6 @@
 package praveen.mesoketes.business.service;
 
 import praveen.mesoketes.base.model.IBase;
-import praveen.mesoketes.model.Attack;
 import praveen.mesoketes.model.WarResult;
 
 public abstract class AttackFrom<T> implements IBase {
@@ -10,9 +9,9 @@ public abstract class AttackFrom<T> implements IBase {
 		super();
 	}
 	
-	public abstract WarResult attack(Attack<T> attack);
+	public abstract WarResult<T> attack(WarResult<T> warResult);
 	
-	protected WarResult increaseWallHeight(int strength, int height){
+/*	protected WarResult increaseWallHeight(int strength, int height){
 		WarResult warResult= new WarResult();
 		if(strength>height){
 			log().info("Attack succeeded");
@@ -28,6 +27,6 @@ public abstract class AttackFrom<T> implements IBase {
 			
 		}
 		return warResult;
-	}
+	}*/
 
 }
