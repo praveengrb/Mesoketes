@@ -2,7 +2,6 @@ package praveen.mesoketes.business.service.impl;
 
 import praveen.mesoketes.base.model.Directions;
 import praveen.mesoketes.business.service.AttackFrom;
-import praveen.mesoketes.common.Constants;
 
 public class AttackFromFactory<T> {
 	

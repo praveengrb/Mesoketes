@@ -50,4 +50,13 @@ public class WarResult {
 		this.compoundWall = compoundWall;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "WarResult [succeededAttacks=" + succeededAttacks + ", failedAttacks=" + failedAttacks
+				+ ", compoundWall=" + compoundWall + "]";
+	}
+
 }

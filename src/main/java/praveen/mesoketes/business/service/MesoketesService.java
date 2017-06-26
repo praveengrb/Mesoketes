@@ -8,6 +8,7 @@ import praveen.mesoketes.business.service.impl.AttackFromFactory;
 import praveen.mesoketes.model.Attack;
 import praveen.mesoketes.model.Tribe;
 import praveen.mesoketes.model.War;
+import praveen.mesoketes.model.WarResult;
 
 public class MesoketesService implements IBase{
 
@@ -25,11 +26,12 @@ public class MesoketesService implements IBase{
 			List<Attack<Tribe>> attacks=war.getAttacks();
 			for (Attack<Tribe> attack : attacks) {
 				AttackFrom<Tribe> factory = new AttackFromFactory<Tribe>(attack.getDirection()).getInstance();
-				factory.attack(attack);
+				WarResult warResult = factory.attack(attack);
+				System.out.println("Result" + warResult);
 				
 			}
 			
 		}
-		//return attackz;
+		////return attackz;
 	}
 }
